@@ -27,7 +27,8 @@ RUN find /var/www -type d | grep lang | \
 		grep -v '/pl$' | grep -v '/en' | \
 		grep -v '/lang$' | sort -u | xargs rm -rf && \
 	rm /var/www/install.php
-ADD dokuwiki/*.php /var/www/conf/
+ADD dokuwiki/* /var/www/conf/
+ADD scripts/* /usr/bin/
 RUN chown -R www-data:www-data /var/www
 
 # Add Active Directory CA certificate
