@@ -34,5 +34,5 @@ RUN chown -R www-data:www-data /var/www
 RUN rm /etc/apache2/sites-enabled/*
 ADD apache/default.conf /etc/apache2/sites-enabled/
 
-VOLUME '/var/www/data'
+VOLUME /var/www/data
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
