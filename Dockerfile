@@ -27,8 +27,7 @@ RUN find /var/www -type d | grep lang | \
 		grep -v '/pl$' | grep -v '/en' | \
 		grep -v '/lang$' | sort -u | xargs rm -rf && \
 	rm /var/www/install.php
-ADD dokuwiki/local.php /var/www/conf/
-ADD dokuwiki/acl.auth.php /var/www/conf/
+ADD dokuwiki/*.php /var/www/conf/
 RUN chown -R www-data:www-data /var/www
 
 # Default apache vhost
