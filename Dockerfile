@@ -30,6 +30,10 @@ RUN find /var/www -type d | grep lang | \
 ADD dokuwiki/*.php /var/www/conf/
 RUN chown -R www-data:www-data /var/www
 
+# Add Active Directory CA certificate
+RUN cat /var/www/conf/*.pem >> /etc/ssl/certs/ca-certificates.crt && \
+	rm -f /var/www/conf/*.pem
+
 # Default apache vhost
 RUN rm /etc/apache2/sites-enabled/*
 ADD apache/default.conf /etc/apache2/sites-enabled/
