@@ -12,3 +12,5 @@ $conf['usewordblock'] = 0;
 $conf['htmlok'] = 1;
 $conf['userewrite'] = '2';
 $conf['useslash'] = 1;
+# Hack to make Dokuwiki work with ssl-proxy
+$conf['basedir'] = $_SERVER["HTTP_X_PATH_INFO"];
