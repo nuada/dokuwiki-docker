@@ -9,7 +9,7 @@ docker tag nuada/dokuwiki:latest nuada/dokuwiki:$(date +%F)
 
 Create wiki container:
 ```
-docker run -d --name dokuwiki -p 8080:80 nuada/dokuwiki
+docker run -d --name dokuwiki nuada/dokuwiki
 ```
 
 To create backup Dokuwiki data use new container:
